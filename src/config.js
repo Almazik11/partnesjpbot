@@ -1,8 +1,8 @@
 const config = {
-  statusURL: 'https://discord.gg/hHFNB4UJrh',
+  statusURL: 'https://discord.gg/WZNeZTST98',
   prefix: 'ap!',
-  botGuildID: '897427499674378291',
-  ownerID: '832913102508261377',
+  botGuildID: '1007408431910617261',
+  ownerID: '962606306148122626',
   ad: {
     desc: {
       min_length: 10,
@@ -13,7 +13,7 @@ const config = {
   deleteCommands: true,
   deleteTime: 30000,
   emojis: {
-    delete: '689328295958806639'
+    delete: '1006891413360881745'
   },
   permLevels: [
     {
