@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
   client.embed.send(message, {
     title: 'Help',
     code: true,
-    desc: `> <a:gemoji_2:919528268380643328> ─ Хотите сообщить об ошибках/недочётах? Вы можете обратиться на наш сервер тех. поддержки https://discord.gg/hHFNB4UJrh. Все команды начинаются с ap!.`,
+    desc: `> <a:gemoji_2:919528268380643328> ─ Хотите сообщить об ошибках/недочётах? Вы можете обратиться на наш сервер тех. поддержки https://discord.gg/WZNeZTST98 . Все команды начинаются с ap!.`,
     fields: [{
       name: 'invite',
       value: 'Способ пригласить этого бота в свою собственную гильдию.'
