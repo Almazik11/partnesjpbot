@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
   client.database.get('SELECT * FROM settings WHERE guildid = ?', [message.guild.id]).then(row => {
     const str = [
                   `__**${message.guild.name}**__\n`,
-                  `${row.desc === null ? '> <a:gemoji_1:919528250064117780> ─ Описание не было установлено.' : row.desc} \`[ap!desc]\``
+                  `${row.desc === null ? '> <a:no:963068784271298621> ─ Описание не было установлено.' : row.desc} \`[ap!desc]\``
     ]
 
     client.embed.send(message, { desc: str.join('\n') })
