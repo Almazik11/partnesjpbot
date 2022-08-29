@@ -5,7 +5,7 @@
  */
 
 module.exports = async client => {
-  client.user.setActivity(`${client.config.prefix}help | Скоро обнова?`, { type: 'PLAYING' })
+  client.user.setActivity(`${client.config.prefix}help | Скоро обнова?`, { type: 'STREAMING' })
 
   client.logger.log(`${client.user.tag} running on ${client.guilds.cache.size} guilds with ${client.users.cache.size} users.`)
 
