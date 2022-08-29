@@ -1,1 +1,1 @@
-Worker: Nodejs bot.js
+Worker: Node ready.js
