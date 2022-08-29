@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
   const cooldown = (5 * 60 * 1000)
 
   if (!message.guild.me.hasPermission('CREATE_INSTANT_INVITE') || !message.guild.me.hasPermission('MANAGE_GUILD')) {
-    client.embed.send(message, { desc: '> <a:gemoji_9:933089517211115680> ─ Мне нужны права`CREATE_INSTANT_INVITE` и `MANAGE_GUILD` для бампа.' })
+    client.embed.send(message, { desc: '>  <:PandaHugg:966717408440090654> ─ Мне нужны права`CREATE_INSTANT_INVITE` и `MANAGE_GUILD` для бампа.' })
     return
   }
 
@@ -31,7 +31,7 @@ exports.run = async (client, message, args) => {
     client.database.all('SELECT * FROM settings').then(async row => {
       message.guild.fetchInvites().then(async invites => {
         if (row.length - 1 <= 0) {
-          client.embed.send(message, { desc: '> <a:gemoji_1:919528250064117780> ─ Здесь нету гильдий, пригласите бота по команде ap!invite' })
+          client.embed.send(message, { desc: '>  <:no:966272561753227264> ─ Здесь нету гильдий, пригласите бота по команде ap!invite' })
           return
         }
 
@@ -61,7 +61,7 @@ exports.run = async (client, message, args) => {
   } else {
     // It's been less than the set cooldown.
     const remaining = prettyMS(Math.round((cooldown) - (now - lastDate[message.guild.id])), { verbose: true, unitCount: 3, secondsDecimalDigits: 0 })
-    client.embed.send(message, { desc: `> <a:gemoji_1:919528250064117780> ─ Вам нужно подождать **${remaining}** bпрежде чем бампать снова.` })
+    client.embed.send(message, { desc: `>  <:heart:967000646446383144> ─ Вам нужно подождать **${remaining}** прежде чем бампать снова.` })
   }
 }
 
@@ -75,7 +75,7 @@ function bumpLogic (client, message, row, invite) {
       if (temp) {
         if (temp.id === message.guild.id) {
           if (!message.guild.channels.cache.has(row[a].partner)) {
-            client.embed.send(message, { desc: `> <a:gemoji_1:919528250064117780> ─ Сначала вы должны инициализировать канал для бота в  ${message.guild.name} с помощью \`${client.config.prefix}init\` прежде чем бампать сервер.` })
+            client.embed.send(message, { desc: `>  <:heart:967000646446383144> ─ Сначала вы должны инициализировать канал для бота в  ${message.guild.name} с помощью \`${client.config.prefix}init\` прежде чем бампать сервер.` })
             lastDate[message.guild.id] = 0
             return
           }
@@ -87,7 +87,7 @@ function bumpLogic (client, message, row, invite) {
 
     if (desc === undefined || desc === null) {
       lastDate[message.guild.id] = 0
-      return client.embed.send(message, { desc: `> <a:gemoji_1:919528250064117780> ─ Описание для гильдии ${message.guild.name} не было установлено. Пожалуйста, установите его.` })
+      return client.embed.send(message, { desc: `>  <:heart:967000646446383144> ─ Описание для гильдии ${message.guild.name} не было установлено. Пожалуйста, установите его.` })
     }
 
     if (guild) {
@@ -99,8 +99,8 @@ function bumpLogic (client, message, row, invite) {
             description: `${desc}\n\n[Invite](${invite.url})`,
             fields: [
               {
-                name: `> <:emoji_7:948279255610056744> ─ Участников: \`${message.guild.members.cache.size}\` (<a:emoji_0000:928747124869447751> ─ \`${guildInfo.humans}%\` Людей | <a:gemoji_20:933092181252636682> ─ \`${guildInfo.bots}%\` Ботов)`,
-                value: `> <a:gemoji_11:933089616083439649> ─ Онлайн: \`${guildInfo.online}\` | <a:gemoji_10:933089527751389326> ─ Idle: \`${guildInfo.idle}\` | <a:gemoji_9:933089517211115680> ─ DnD: \`${guildInfo.dnd}\``,
+                name: `> 👤 ─ Участников: \`${message.guild.members.cache.size}\` (👤 ─ \`${guildInfo.humans}%\` Людей | 🤖 ─ \`${guildInfo.bots}%\` Ботов)`,
+                value: `>  🟢  ─ Онлайн: \`${guildInfo.online}\` | ⚫ ─ Idle: \`${guildInfo.idle}\` | 🟠 ─ DnD: \`${guildInfo.dnd}\``,
                 inline: false
               },
               
@@ -113,7 +113,7 @@ function bumpLogic (client, message, row, invite) {
               url: message.guild.iconURL()
             },
             footer: {
-              text: `> <a:gemoji_5:932597043107598356> ─ Гильдия создана: ${message.guild.createdAt} | <:emoji_4:903569959299448853> ─ Регион: ${message.guild.region}`
+              text: `>  <:yes:966272635329720320> ─ Гильдия создана: ${message.guild.createdAt} | 🪙 ─ Регион: ${message.guild.region}`
             }
           }
         })
@@ -121,7 +121,7 @@ function bumpLogic (client, message, row, invite) {
     }
   }
 
-  client.embed.send(message, { desc: `> <:emoji_8:951139469686349854> ─ Ваше объявление разослано для ${row.length - 1} гильдий!` })
+  client.embed.send(message, { desc: `>  <:yes:966272635329720320> ─ Ваше объявление разослано для ${row.length - 1} гильдий!` })
 }
 
 function getGuildInfo (guild) {
