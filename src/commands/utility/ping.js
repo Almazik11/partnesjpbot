@@ -11,7 +11,7 @@
  */
 exports.run = async (client, message, args) => {
   const msg = await client.embed.send(message, { desc: 'Ping?' }, false)
-  await client.embed.edit(message, msg, { desc: `<:kittywow:521494525571629076> понг! Задержка сейчас ${msg.createdTimestamp - message.createdTimestamp}ms. Задержка АPI: ${Math.round(client.ws.ping)}ms` })
+  await client.embed.edit(message, msg, { desc:  <:heart:967000646446383144> понг! Задержка сейчас ${msg.createdTimestamp - message.createdTimestamp}ms. Задержка АPI: ${Math.round(client.ws.ping)}ms` })
 }
 
 /** Command Config */
